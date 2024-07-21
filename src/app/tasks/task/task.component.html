@@ -1,0 +1,7 @@
+<div class="task">
+    <div>
+      <h3>{{ task | taskSummary }}</h3>
+    </div>
+    <button *ngIf="onComplete" (click)="completeTask()">Kész</button>
+  </div>
+  

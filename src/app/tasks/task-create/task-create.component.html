@@ -1,0 +1,27 @@
+<div>
+  <label>
+    Név:
+    <input [(ngModel)]="name" placeholder="Feladat neve">
+  </label>
+</div>
+<div>
+  <label>
+    Leírás:
+    <textarea [(ngModel)]="description" placeholder="Feladat leírása"></textarea>
+  </label>
+</div>
+<div>
+  <label>
+    Felhasználónév:
+    <input [(ngModel)]="username" placeholder="Felhasználónév (opcionális)" readonly>
+  </label>
+</div>
+<div>
+  <label>
+    Kész:
+    <input type="checkbox" [(ngModel)]="completed">
+  </label>
+</div>
+<button (click)="createTask()">Létrehozás</button>
+<button (click)="cancel()">Vissza</button>
+

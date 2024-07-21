@@ -1,0 +1,22 @@
+<header>
+  <h1>Feladatok listázása</h1>
+</header>
+<div class="container">
+  <button (click)="addTask()">Új feladat</button>
+  <button (click)="logout()">Kijelentkezés</button>
+  <div *ngIf="tasks().length === 0 && completedTasks().length === 0">
+    <p>A feladat lista üres.</p>
+  </div>
+  <h2>Feladatok</h2>
+  <ul class="task-list" *ngIf="tasks().length > 0">
+    <li *ngFor="let task of tasks()">
+      <app-task [task]="task" (onComplete)="onCompleteTask(task)"></app-task>
+    </li>
+  </ul>
+  <h2>Kész feladatok</h2>
+  <ul class="task-list" *ngIf="completedTasks().length > 0">
+    <li *ngFor="let task of completedTasks()">
+      <app-task [task]="task"></app-task>
+    </li>
+  </ul>
+</div>
